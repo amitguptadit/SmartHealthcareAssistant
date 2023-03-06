@@ -55,9 +55,8 @@ class PatientHealthCareAnalytics:
             while True:
                 hm, temperature = Adafruit_DHT.read(dht_sensor, dht_pin)
                 if hm is not None and temperature is not None:
-                    # print("Temp={0:0.1f}C Humid={1:0.1f}%".format(temperature, humid))
-                    # temp = "{0: 0.1f}C".format(temperature, hm)
-                    temp = "{0: 0.1f}C".format(temperature+10, hm)
+                    # temp = "{0: 0.1f}C".format(temperature+10, hm)
+                    temp = "{0: 0.1f}C".format(temperature, hm)
                     temp = float(temp[:-1]);
                     degree = int(round(temp))
                     # fahrenheit
