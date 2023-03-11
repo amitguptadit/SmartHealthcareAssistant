@@ -67,9 +67,9 @@ class PatientHealthCareAnalytics:
                     timestamp = str(time.time());
                     # response = jsonify({'timestamp': 400,'metrics': [{'name': 'patientId', 'value': temp}], 'seq': '2'})
 
-                    # payload = "{'timestamp': "+timestamp+", 'metrics': [{'name': 'patientId', 'value': "+temp+"}], 'seq':"+str(seq)+"}"
-                    payload = "{'timestamp': " + timestamp + ", 'metrics': [{'name': 'patientId','timestamp': " + timestamp + ",'dataType': 'Float', 'value': " + temp + "}], 'seq':" + str(
-                        seq) + "}"
+                    patient_id = "AA001";
+                    # payload = '{"timestamp": 1678505905.9044406,"metrics": [{"name": "patientI","timestamp": 1678505905.9044406,"dataType": "Float", "value": 77.0}],"seq":89}'
+                    payload = '{"timestamp": '+timestamp+',"metrics": [{"patientId": "'+patient_id+'","timestamp": '+timestamp+',"dataType": "Float", "temperature": '+temp+'}],"seq":'+str(seq)+'}'
 
                     # payload_data = bytearray(payload.SerializeToString())
                     # ret = self.clientObj.publish("test", payload)  # topic name is test
@@ -80,7 +80,10 @@ class PatientHealthCareAnalytics:
                     # spBv1.0/myGroupId/DDATA/myNodeName/#
                     print(temp);
                     print("Load data  \n")
-                    time.sleep(5)
+                    # 5 seconds
+                    # time.sleep(5)
+                    # 30 minuts = 30x60
+                    time.sleep(1800)
                 else:
                     print("Sensor failure. Check wiring.");
                     print(Adafruit_DHT.read(DHT_SENSOR, DHT_PIN))
