@@ -1,0 +1,36 @@
+.profile-image {
+    height: 30%;
+    width: 50%;
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+}
+
+.profile-image-scale {
+    height: 100%;
+    width: 100%;
+}
+
+.items-main {
+    margin-top: 30px;
+}
+
+.item-display {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.item-label {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bolder;
+    width: 50%;
+}
+
+.item-value {
+    font-size: 14px;
+    line-height: 14px;
+    width: 50%;
+}   
