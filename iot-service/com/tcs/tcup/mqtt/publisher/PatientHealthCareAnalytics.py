@@ -81,9 +81,9 @@ class PatientHealthCareAnalytics:
                     print(temp);
                     print("Load data  \n")
                     # 5 seconds
-                    # time.sleep(5)
+                    time.sleep(5)
                     # 30 minuts = 30x60
-                    time.sleep(1800)
+                    # time.sleep(1800)
                 else:
                     print("Sensor failure. Check wiring.");
                     print(Adafruit_DHT.read(DHT_SENSOR, DHT_PIN))

@@ -58,6 +58,29 @@ class PatientMQTTSubscriber:
             return 'fail'
     pass
 
+    def read_csv(self,filename):
+        """ READ PATIENT DATA' .
+        Parameters:
+            self :Default.
+            message_broker :message_broker.
+            port : port.
+        Returns: ''
+        """
+        try:
+            print('[ READ PATIENT DATA IN CSV ]');
+            # opening the CSV file
+            with open(filename, mode='r')as file:
+                # reading the CSV file
+                csvFile = csv.reader(file)
+                # displaying the contents of the CSV file
+                for lines in csvFile:
+                    print(lines)
+            pass
+        except Exception as ex:
+            print("Exception CSV write: ", ex)
+            return 'fail'
+    pass
+
     def on_message(self,client, userdata, message):
       print("received data is :")
       # print(str(message.payload.decode("utf-8")) ) #printing Received message
